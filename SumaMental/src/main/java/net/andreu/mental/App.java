@@ -25,6 +25,7 @@ public class App {
 	private String signe;
 	private int cont = 0;
 	private int seg = 0;
+	private int min =0;
 
 	private Random rm = new Random();
 
@@ -70,9 +71,13 @@ public class App {
 
 		final Timer time = new Timer(1000, new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				seg = seg + 1;
+				seg = seg+1;
+				if(seg==60){
+					min=min+1;
+				}
 				String segons = String.valueOf(seg);
-				temps.setText(segons);
+				String minuts = String.valueOf(min);
+				temps.setText(minuts+":"+segons);
 			}
 		});
 
@@ -155,7 +160,7 @@ public class App {
 					correcio.setText("Correcte!!!");
 					if (cont == 3) {
 						time.stop();
-						JOptionPane.showMessageDialog(frame, "Has trigat " + String.valueOf(seg) + " segons. ","Felicitats!", JOptionPane.PLAIN_MESSAGE);
+						JOptionPane.showMessageDialog(frame, "Has trigat "+String.valueOf(min)+" minut i "+String.valueOf(seg)+" segons. ","Felicitats!", JOptionPane.PLAIN_MESSAGE);
 						System.exit(0);
 					}
 				} else {
