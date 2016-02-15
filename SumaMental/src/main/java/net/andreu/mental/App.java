@@ -74,6 +74,7 @@ public class App {
 				seg = seg+1;
 				if(seg==60){
 					min=min+1;
+					seg=0;
 				}
 				String segons = String.valueOf(seg);
 				String minuts = String.valueOf(min);
