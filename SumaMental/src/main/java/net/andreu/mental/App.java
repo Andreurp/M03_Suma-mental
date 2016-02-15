@@ -150,18 +150,20 @@ public class App {
 
 				if (resposta.getText().equals(String.valueOf(resultat))) {
 					cont++;
-					num1 = rm.nextInt(MAX_NUM);
-					num2 = rm.nextInt(MAX_NUM);
-					signe = operador[rm.nextInt(operador.length)];
-					String.valueOf(num1);
-					String.valueOf(num2);
-					operacio.setText(num1 + signe + num2);
+					
 					correcio.setForeground(Color.green);
 					correcio.setText("Correcte!!!");
 					if (cont == 3) {
 						time.stop();
 						JOptionPane.showMessageDialog(frame, "Has trigat "+String.valueOf(min)+" minut i "+String.valueOf(seg)+" segons. ","Felicitats!", JOptionPane.PLAIN_MESSAGE);
 						System.exit(0);
+					}else{
+						num1 = rm.nextInt(MAX_NUM);
+						num2 = rm.nextInt(MAX_NUM);
+						signe = operador[rm.nextInt(operador.length)];
+						String.valueOf(num1);
+						String.valueOf(num2);
+						operacio.setText(num1 + signe + num2);
 					}
 				} else {
 					correcio.setForeground(Color.red);
